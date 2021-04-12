@@ -1,0 +1,43 @@
+<div>
+    <h4 class="card-header">{{title}}</h4>
+</div>
+<div class="container formDiv">
+    <form (ngSubmit)="AddUser()">
+        <div class="form-group">
+            <input type="text" class="form-control" id="fullName" name="name" [(ngModel)]="userItem.name" placeholder="Enter Full Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" pattern="^[a-z0-9,%+]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="userItem.email" placeholder="Enter Email address" required>
+        </div>
+        <div class="form-group">
+            <label for="bloodType">Select Blood Type</label>
+            <select class="form-control" name="blood" id="bloodType" [(ngModel)]="userItem.blood" required>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="Bombay">Bombay Blood group</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="userItem.phone" placeholder="Enter 10-digit mobile number" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="addressL1" name="address1" [(ngModel)]="userItem.address1" placeholder="Enter City" required>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="addressL2" name="address2" [(ngModel)]="userItem.address2" placeholder="Enter State" required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="password" minlength="8" name="password" [(ngModel)]="userItem.password" placeholder="Enter Password" required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" id="confPassword" name="confPassword" [(ngModel)]="userItem.confPassword" placeholder="Confirm Password" required>
+        </div>
+        <button type="submit" value="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>

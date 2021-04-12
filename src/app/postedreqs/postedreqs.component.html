@@ -1,0 +1,31 @@
+<div class="card-header">
+    <h4 class="card-title">{{title}}</h4>
+</div>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-sthiped">
+            <thead class="thead-dark">
+                <th>Request</th>
+                <th>Date</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reqt of requests">
+                    <td>{{reqt.request}}</td>
+                    <td>{{reqt.date}}</td>
+                    <td>{{reqt.city}}</td>
+                    <td>{{reqt.state}}</td>
+                    <td>{{reqt.phone}}</td>
+                    <td>
+                        <button (click)="updateReq(reqt)" class="btn btn-success">Edit</button>
+                        <button (click)="deleteReq(reqt)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

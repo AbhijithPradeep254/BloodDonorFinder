@@ -1,0 +1,42 @@
+<div class="card-header">
+    <h4 class="card-title">{{title}}, {{user.name}}</h4>
+</div>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-light table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Details</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>{{user.name}}</td>
+                </tr>
+                <tr>
+                    <td>Blood Group</td>
+                    <td>{{user.blood}}</td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>{{user.address1}}</td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td>{{user.address2}}</td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td>{{user.phone}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div style="margin: 20px;">
+    <button routerLink="/account/postedreqs" class="btn btn-primary">My Posts</button>
+</div>

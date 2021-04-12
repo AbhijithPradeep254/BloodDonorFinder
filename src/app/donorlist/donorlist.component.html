@@ -1,0 +1,53 @@
+<div class="card-header">
+    <h4 class="card-title">{{title}}</h4>
+</div>
+<div class='container'>
+    <form (ngSubmit)="filterData()" >
+        <div class="form-group row">
+            <label for="address1" class="col-2">Select City</label>
+            <select name="address1" class="form-control col-10" id="" [(ngModel)]="filterValues.address1">
+                <option *ngFor = "let user of users" value="{{user.address1}}">{{user.address1}}</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="address2" class="col-2">Select State</label>
+            <select name="address2" class="form-control col-10" id=""  [(ngModel)]="filterValues.address2">
+                <option value="select2" disabled selected>Select State</option>
+                <option *ngFor = "let user of users" value="{{user.address2}}">{{user.address2}}</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="blood" class="col-2">Select Blood Type</label>
+            <select name="blood" class="form-control col-10" id=""  [(ngModel)]="filterValues.blood">
+                <option value="select3" disabled selected>Select Blood Group</option>
+                <option *ngFor = "let user of users" value="{{user.blood}}">{{user.blood}}</option>
+            </select>
+        </div>
+        <button tye="submit" class="btn btn-primary">Filter</button>
+    </form>
+</div>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Blood Group</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userTemp">
+                    <td>{{user.name}}</td>
+                    <td>{{user.blood}}</td>
+                    <td>{{user.address1}}</td>
+                    <td>{{user.address2}}</td>
+                    <td>{{user.phone}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

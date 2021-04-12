@@ -1,0 +1,49 @@
+<div class="card-header">
+    <h4 class="card-title">{{title}}</h4>
+</div>
+
+<div style="margin: 20px 20px 20px 20px;">
+    <form (ngSubmit)="filterData()">
+        <div class="form-group row">
+            <select name="city" id="" class="form-control col-9" [(ngModel)]="filterValues.city">
+                <option *ngFor="let reqt of requests" value="{{reqt.city}}">{{reqt.city}}</option>
+            </select>
+            <label for="city" class="col-3">Select City</label>
+        </div>
+        <div class="form-group row">
+            <select name="state" id="" class="form-control col-9" [(ngModel)]="filterValues.state">
+                <option *ngFor="let reqt of requests" value="{{reqt.state}}">{{reqt.state}}</option>
+            </select>
+            <label for="state" class="col-3">Select State</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+    <button class="btn btn-primary" (click)="newRequest($event)" style="float: right;">Post a Request</button>
+</div>
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered table-light table-striped">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th style="width: 40%; text-align: center;">Request</th>
+                    <th>Posted Date (DD-MM-YYY)</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Contact No.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let reqt of reqTemp">
+                    <td>{{reqt.sno}}</td>
+                    <td>{{reqt.request}}</td>
+                    <td>{{reqt.date}}</td>
+                    <td>{{reqt.city}}</td>
+                    <td>{{reqt.state}}</td>
+                    <td>{{reqt.phone}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.card-header
+{
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.center
+{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#postBtn
+{
+    margin-left: 120px;
+    margin-right: auto;
+}

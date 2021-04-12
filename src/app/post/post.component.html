@@ -1,0 +1,25 @@
+<div class="card-header">
+    <h4 class="card-title">{{title}}</h4>
+</div>
+
+<div class="container" style="margin-left: 350px;">
+    <form (ngSubmit)="PostOrUpdateReq()">
+        <div class="center row">
+            <div class="form-group col-lg-5">
+            <textarea class="form-control" name="request" id="" cols="20" rows="10" [(ngModel)]="postInfo.request" placeholder="Enter Request"></textarea>
+            </div>
+            <div class="col">
+                <div class="form-group col-7">
+                    <input class="form-control" type="text" name="city" id="" [(ngModel)]="postInfo.city" placeholder="Enter City">
+                </div>
+                <div class="form-group col-7">
+                    <input class="form-control" type="text" name="state" id="" [(ngModel)]="postInfo.state" placeholder="Enter State">
+                </div>
+                <div class="form-group col-7">
+                    <input class="form-control" type="text" name="phone" id="" [(ngModel)]="postInfo.phone" placeholder="Enter Phone Number">
+                </div>
+                <button class="btn btn-primary" id="postBtn">Post</button>
+            </div>
+        </div>
+    </form>
+</div>
